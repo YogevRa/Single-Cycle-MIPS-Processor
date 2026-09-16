@@ -40,4 +40,4 @@ The system testbench pre-loads memory and executes a looping program:
 ### Simulation Waveforms
 Below is the execution trace verifying clock synchronization, control assertion, and datapath values:
 
-![Waveform Verification](waveforms.png)
+![Waveform Verification](docs/waveforms.png)
