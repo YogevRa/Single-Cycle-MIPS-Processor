@@ -4,6 +4,9 @@ A complete hardware implementation and verification of a 32-bit Single-Cycle MIP
 
 ## Architectural Overview
 
+![MIPS Architecture Reference](docs/mips_architecture.png)
+(Reference block diagram for the implemented Single-Cycle MIPS datapath)
+
 * **Instruction Fetch (IF):** Program Counter (`pc`) register with synchronous updates, parallel adder calculating sequential execution targets (`PC + 4`), and word-aligned Instruction Memory (`imem`).
 * **Instruction Decode (ID):** Dual-layer control decoding via `control_unit` and `alu_control`. Register File (`regfile`) supporting simultaneous asynchronous dual-reads and synchronous positive-edge writes, with `$zero` hardwired to 0. Sign extension preserving Two's Complement representation for 16-bit immediates.
 * **Execute (EX):** Arithmetic Logic Unit (`alu`) supporting arithmetic, logical, and relational operations (`ADD`, `SUB`, `AND`, `OR`, `SLT`), accompanied by speculative parallel target address calculation for branch instructions (`PC + 4 + (Imm << 2)`).
